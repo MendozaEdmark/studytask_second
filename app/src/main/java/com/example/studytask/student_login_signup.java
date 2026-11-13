@@ -1,12 +1,15 @@
 package com.example.studytask;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+
 
 public class student_login_signup extends AppCompatActivity {
 
@@ -19,6 +22,12 @@ public class student_login_signup extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        TextView signUp = findViewById(R.id.textViewSignUp);
+        signUp.setOnClickListener(v -> {
+            Intent intent = new Intent(student_login_signup.this, student_signup.class);
+            startActivity(intent);
         });
     }
 }
